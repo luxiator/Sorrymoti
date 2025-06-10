@@ -9,24 +9,24 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       text-align: center;
       padding: 2rem;
-      color: #333;
+      color: #4b006e;
     }h1 {
   color: #d63384;
 }
 
 .flower {
-  width: 60px;
-  height: 60px;
-  background-image: url('https://cdn.pixabay.com/photo/2013/07/12/18/20/lavender-153769_1280.png');
+  width: 80px;
+  height: 80px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/685/685008.png');
   background-size: cover;
   display: inline-block;
   margin: 10px;
-  animation: bloom 1s ease-out;
+  animation: bloom 0.8s ease-out;
 }
 
 @keyframes bloom {
   from {
-    transform: scale(0.1);
+    transform: scale(0);
     opacity: 0;
   }
   to {
@@ -37,30 +37,35 @@
 
 button {
   background-color: #ffb3ec;
-  color: #000;
+  color: #4b006e;
   padding: 10px 20px;
   margin: 10px;
   border: none;
   border-radius: 12px;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
   background-color: #f88dd5;
+  transform: scale(1.05);
 }
 
 .letter-box {
-  border: 2px dashed #b370b0;
-  background: #fff0fb;
-  padding: 20px;
+  border: 4px double #c77dff;
+  background: #fff8fc;
+  padding: 25px;
   margin-top: 20px;
   width: 90%;
-  max-width: 400px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   display: none;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #d19fe8;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
 }
 
   </style>
@@ -75,24 +80,28 @@ button:hover {
     <button onclick="showLetterBox()">Definitely I forgive</button>
   </div>  <div id="message-box" class="letter-box">
     <p>
-      Sorry ni ta kya kasto rishako hora sorry hya kasto ho 😔<br/>
+      Sorry ni ta kya kasto rishako hora sorry hya kasto ho 😔<br />
       Ahh letter ta aile kata Bata dinu so this is a letter... A digital letter.
     </p>
-    <button onclick="showDigitalLetter()">Digital Letter</button>
+    <button onclick="showDigitalLetter()">Read Digital Letter 📬</button>
   </div>  <div id="digital-letter" class="letter-box">
-    <h3>To preety Manyata 🌸</h3>
+    <h3>To Preety Manyata 💌</h3>
     <p>
-      I'm very sorry Manyata. Aba khai k vanam 😔<br />
-      K maile Jani Jani haina na ta. Tyo TikTok maa maile Jani Jani lekhya thi 😣<br />
+      I'm very sorry Manyata.<br />
+      Aba khai k vanam... 😔<br />
+      K maile Jani Jani haina na ta.<br />
+      Tyo TikTok maa maile Jani Jani lekhya thi 😣<br />
       Aba I shouldn't have said it 😞<br />
       I tried to delete tara delete from me matra vayo 😕<br />
-      Aba khai k vanam... I'm really really sorry 🙏🏻😭
+      Aba khai k vanam... I'm really really sorry 🙏🏻😭<br />
+      Yo letter maa jati lekhe pani, timro respect ka agadi ma jhukdai chu 🙇‍♂️<br />
+      Maile galti gare, and I'm learning.
     </p>
   </div>  <script>
     function showFlowers() {
       const container = document.getElementById('flower-container');
       container.innerHTML = '';
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 12; i++) {
         const flower = document.createElement('div');
         flower.className = 'flower';
         container.appendChild(flower);
