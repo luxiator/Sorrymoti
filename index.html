@@ -72,37 +72,53 @@ button:hover {
   display: none;
   margin-top: 20px;
   font-size: 20px;
-  color: #b30059;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
 }
 
+.qr-section {
+  margin-top: 40px;
+}
+
+.qr-image {
+  margin: 10px;
+  width: 160px;
+  height: 160px;
+}
+
   </style>
 </head>
 <body>
-  <h1>SORRY MOTI 😔😭</h1>
-  <button onclick="showFlowers()">Click here if you're still mad 😔</button>
-  <div id="flower-container"></div><button onclick="showForgiveOptions()">I might forgive you 🤨</button>
+  <h1>SORRY MOTI</h1>
+  <button onclick="showFlowers()">Click here if you're still mad</button>
+  <div id="flower-container"></div><button onclick="showForgiveOptions()">I might forgive you</button>
 
   <div id="forgive-buttons" style="display: none;">
     <button onclick="showLetterBox()">Yes I forgive</button>
     <button onclick="showLetterBox()">Definitely I forgive</button>
   </div>  <div id="message-box" class="letter-box">
     <p>
-      Sorry ni ta kya kasto rishako hora sorry hya kasto ho 😔<br />
+      Sorry ni ta kya kasto rishako hora sorry hya kasto ho<br />
       Ahh letter ta aile kata Bata dinu so this is a letter... A digital letter.
     </p>
-    <button onclick="showDigitalLetter()">Read Digital Letter 📬</button>
+    <button onclick="showDigitalLetter()">Read Digital Letter</button>
   </div>  <div id="digital-letter" class="letter-box">
-    <h3>To Preety Manyata 💌</h3>
+    <h3>To Preety Manyata</h3>
     <p>
-      I'm very sorry Manyata. Aba khai k vanam k maile Jani Jani haina na ta tyo TikTok Maa maile Jani Jani lekhya thi aba I shouldn't have said it I tried to delete Tara delete from me Matra vayo Ani aba khai k vanam I'm sorry 🙏🏻😭
+      I'm very sorry Manyata. Aba khai k vanam k maile Jani Jani haina na ta tyo TikTok Maa maile Jani Jani lekhya thi aba I shouldn't have said it I tried to delete Tara delete from me Matra vayo Ani aba khai k vanam I'm sorry
     </p>
-  </div><button onclick="showSorryLoop()">Click here if you still want to hear me say sorry 💔</button>
+  </div><button onclick="showSorryLoop()">Sorry to Manyata</button>
 
-  <div id="sorry-loop" class="sorry-repeat-box"></div>  <script>
+  <div id="sorry-loop" class="sorry-repeat-box"></div>  <div class="qr-section">
+    <h2>Choose the right song 😅</h2>
+    <p>If one is cringe, try the next!</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://youtu.be/UyjL052eFAA&size=160x160" alt="QR 1" class="qr-image" />
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://youtu.be/LeVTfD6U5jA&size=160x160" alt="QR 2" class="qr-image" />
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://youtu.be/mQBqfw1wKu0&size=160x160" alt="QR 3" class="qr-image" />
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=I couldn't find any songs u sang right at the moment it's hard to add here😭&size=160x160" alt="QR 4" class="qr-image" />
+  </div>  <script>
     function showFlowers() {
       const container = document.getElementById('flower-container');
       container.innerHTML = '';
@@ -125,11 +141,21 @@ button:hover {
       document.getElementById('digital-letter').style.display = 'block';
     }
 
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
     function showSorryLoop() {
       const loopBox = document.getElementById('sorry-loop');
       let text = '';
-      for (let i = 1; i <= 100; i++) {
-        text += i + '. Sorry Manyata 😔💗<br />';
+      for (let i = 1; i <= 500; i++) {
+        const color = getRandomColor();
+        text += `<span style="color:${color};">Sorry Manyata</span><br />`;
       }
       loopBox.innerHTML = text;
       loopBox.style.display = 'block';
