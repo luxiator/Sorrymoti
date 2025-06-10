@@ -15,9 +15,9 @@
 }
 
 .flower {
-  width: 80px;
-  height: 80px;
-  background-image: url('https://cdn-icons-png.flaticon.com/512/685/685008.png');
+  width: 60px;
+  height: 60px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/Lavender_flower.png');
   background-size: cover;
   display: inline-block;
   margin: 10px;
@@ -68,6 +68,17 @@ button:hover {
   text-align: left;
 }
 
+.sorry-repeat-box {
+  display: none;
+  margin-top: 20px;
+  font-size: 20px;
+  color: #b30059;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
   </style>
 </head>
 <body>
@@ -87,17 +98,11 @@ button:hover {
   </div>  <div id="digital-letter" class="letter-box">
     <h3>To Preety Manyata 💌</h3>
     <p>
-      I'm very sorry Manyata.<br />
-      Aba khai k vanam... 😔<br />
-      K maile Jani Jani haina na ta.<br />
-      Tyo TikTok maa maile Jani Jani lekhya thi 😣<br />
-      Aba I shouldn't have said it 😞<br />
-      I tried to delete tara delete from me matra vayo 😕<br />
-      Aba khai k vanam... I'm really really sorry 🙏🏻😭<br />
-      Yo letter maa jati lekhe pani, timro respect ka agadi ma jhukdai chu 🙇‍♂️<br />
-      Maile galti gare, and I'm learning.
+      I'm very sorry Manyata. Aba khai k vanam k maile Jani Jani haina na ta tyo TikTok Maa maile Jani Jani lekhya thi aba I shouldn't have said it I tried to delete Tara delete from me Matra vayo Ani aba khai k vanam I'm sorry 🙏🏻😭
     </p>
-  </div>  <script>
+  </div><button onclick="showSorryLoop()">Click here if you still want to hear me say sorry 💔</button>
+
+  <div id="sorry-loop" class="sorry-repeat-box"></div>  <script>
     function showFlowers() {
       const container = document.getElementById('flower-container');
       container.innerHTML = '';
@@ -118,6 +123,16 @@ button:hover {
 
     function showDigitalLetter() {
       document.getElementById('digital-letter').style.display = 'block';
+    }
+
+    function showSorryLoop() {
+      const loopBox = document.getElementById('sorry-loop');
+      let text = '';
+      for (let i = 1; i <= 100; i++) {
+        text += i + '. Sorry Manyata 😔💗<br />';
+      }
+      loopBox.innerHTML = text;
+      loopBox.style.display = 'block';
     }
   </script></body>
 </html>
